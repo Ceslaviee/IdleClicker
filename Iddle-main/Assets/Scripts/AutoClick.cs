@@ -20,6 +20,7 @@ public class AutoClick : MonoBehaviour
     public int PrixConstell6;
     public int Quantite;
     public int Quantite1;
+    public int Obtention0;
     public int Obtention1;
     public int Obtention2;
     public int Obtention3;
@@ -35,6 +36,13 @@ public class AutoClick : MonoBehaviour
     public TextMeshProUGUI textQuantite1;
     public GameObject MonCanvas;
     public GameObject MonAutreCanvas;
+    public GameObject MortEtoile0;
+    public GameObject MortEtoile1;
+    public GameObject MortEtoile2;
+    public GameObject MortEtoile3;
+    public GameObject MortEtoile4;
+    public GameObject MortEtoile5;
+    public GameObject MortEtoile6;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +50,14 @@ public class AutoClick : MonoBehaviour
         StartCoroutine(autoClick());
         MonCanvas.SetActive(true);
         MonAutreCanvas.SetActive(false);
+        MortEtoile0.SetActive(false);
+        MortEtoile1.SetActive(false);
+        MortEtoile2.SetActive(false);
+        MortEtoile3.SetActive(false);
+        MortEtoile4.SetActive(false);
+        MortEtoile5.SetActive(false);
+        MortEtoile6.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -59,8 +75,6 @@ public class AutoClick : MonoBehaviour
             scoreArgent.score1 -= Prix;
             Prix = Prix + (Prix * 83/100);
             textPrix.text = Prix.ToString("00");
-            textQuantite.text = Quantite.ToString("0");
-            Quantite += 1;
             
         }
 
@@ -72,83 +86,87 @@ public class AutoClick : MonoBehaviour
             clickPower += 20;
             scoreArgent.score -= Prix1;
             scoreArgent.score1 -= Prix1;
-            Prix1 = Prix1 + (Prix1 * 78 / 100);
+            Prix1 = Prix1 + (Prix1 * 74 / 100);
             textPrix1.text = Prix1.ToString("00");
-            textQuantite1.text = Quantite1.ToString("0");
-            Quantite1 += 1;
-
         }
     }
     public void Constell0()
     {
-        if (scoreArgent.score >= PrixConstell0)
+        if (scoreArgent.score >= PrixConstell0 && Obtention0 == 0)
         {
-            clickPower += 10;
+            clickPower += 1000;
             scoreArgent.score -= PrixConstell0;
             scoreArgent.score1 -= PrixConstell0;
-            Obtention1 += 1;
-
+            MortEtoile0.SetActive(true);
+            Obtention0 = 1;
         }
     }
     public void Constell1()
     {
-        if (scoreArgent.score >= PrixConstell1)
+        if (scoreArgent.score >= PrixConstell1 && Obtention1 == 0)
         {
             clickPower += 25;
             scoreArgent.score -= PrixConstell1;
             scoreArgent.score1 -= PrixConstell1;
-            Obtention1 += 1;
-
+            MortEtoile1.SetActive(true);
+            Obtention1 = 1;
         }
     }
     public void Constell2()
     {
-        if (scoreArgent.score >= PrixConstell2)
+        if (scoreArgent.score >= PrixConstell2 && Obtention2 == 0)
         {
             clickPower += 75;
             scoreArgent.score -= PrixConstell2;
             scoreArgent.score1 -= PrixConstell2;
-            Obtention2 += 1;
-
+            MortEtoile2.SetActive(true);
+            Obtention2 = 1;
         }
     }
     public void Constell3()
     {
-        if (scoreArgent.score >= PrixConstell3)
+        if (scoreArgent.score >= PrixConstell3 && Obtention3 == 0)
         {
             clickPower += 150;
             scoreArgent.score -= PrixConstell3;
-            Obtention3 += 1;
+            scoreArgent.score1 -= PrixConstell3;
+            MortEtoile3.SetActive(true);
+            Obtention3 = 1;
 
         }
     }
     public void Constell4()
     {
-        if (scoreArgent.score >= PrixConstell4)
+        if (scoreArgent.score >= PrixConstell4 && Obtention4 == 0)
         {
             clickPower += 250;
             scoreArgent.score -= PrixConstell4;
-            Obtention4 += 1;
-
+            scoreArgent.score1 -= PrixConstell4;
+            MortEtoile4.SetActive(true);
+            Obtention4 = 1;
         }
     }
     public void Constell5()
     {
-        if (scoreArgent.score >= PrixConstell5)
+        if (scoreArgent.score >= PrixConstell5 && Obtention5 == 0)
         {
             clickPower += 1000;
             scoreArgent.score -= PrixConstell5;
-            Obtention5 += 1;
+            scoreArgent.score1 -= PrixConstell5;
+            MortEtoile5.SetActive(true);
+            Obtention5 = 1;
 
         }
     }
     public void Constell6()
     {
-        if (scoreArgent.score >= PrixConstell6)
+        if (scoreArgent.score >= PrixConstell6 && Obtention6 == 0)
         {
             clickPower += 5000;
             scoreArgent.score -= PrixConstell6;
-            Obtention6 += 1;
+            scoreArgent.score1 -= PrixConstell6;
+            MortEtoile6.SetActive(true);
+            Obtention6 = 1;
 
         }
     }
@@ -173,7 +191,7 @@ public class AutoClick : MonoBehaviour
         {
             gerescore.RiseScore(clickPower);
             gerescore.RiseScoreAutre(clickPower);
-            yield return new WaitForSeconds(0.7f);
+            yield return new WaitForSeconds(0.48f);
         }
         
     }
