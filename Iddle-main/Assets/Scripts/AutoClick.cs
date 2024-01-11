@@ -18,8 +18,6 @@ public class AutoClick : MonoBehaviour
     public int PrixConstell4;
     public int PrixConstell5;
     public int PrixConstell6;
-    public int Quantite;
-    public int Quantite1;
     public int Obtention0;
     public int Obtention1;
     public int Obtention2;
@@ -43,6 +41,21 @@ public class AutoClick : MonoBehaviour
     public GameObject MortEtoile4;
     public GameObject MortEtoile5;
     public GameObject MortEtoile6;
+    public GameObject Constellation0;
+    public GameObject Constellation1;
+    public GameObject Constellation2;
+    public GameObject Constellation3;
+    public GameObject Constellation4;
+    public GameObject Constellation5;
+    public GameObject Constellation6;
+    public GameObject ByeText0;
+    public GameObject ByeText1;
+    public GameObject ByeText2;
+    public GameObject ByeText3;
+    public GameObject ByeText4;
+    public GameObject ByeText5;
+    public GameObject ByeText6;
+
 
     // Start is called before the first frame update
     void Start()
@@ -99,6 +112,9 @@ public class AutoClick : MonoBehaviour
             scoreArgent.score1 -= PrixConstell0;
             MortEtoile0.SetActive(true);
             Obtention0 = 1;
+            Destroy(Constellation0);
+            Destroy(ByeText0);
+
         }
     }
     public void Constell1()
@@ -110,6 +126,8 @@ public class AutoClick : MonoBehaviour
             scoreArgent.score1 -= PrixConstell1;
             MortEtoile1.SetActive(true);
             Obtention1 = 1;
+            Destroy(Constellation1);
+            Destroy(ByeText1);
         }
     }
     public void Constell2()
@@ -121,6 +139,8 @@ public class AutoClick : MonoBehaviour
             scoreArgent.score1 -= PrixConstell2;
             MortEtoile2.SetActive(true);
             Obtention2 = 1;
+            Destroy(Constellation2);
+            Destroy(ByeText2);
         }
     }
     public void Constell3()
@@ -132,6 +152,8 @@ public class AutoClick : MonoBehaviour
             scoreArgent.score1 -= PrixConstell3;
             MortEtoile3.SetActive(true);
             Obtention3 = 1;
+            Destroy(Constellation3);
+            Destroy(ByeText3);
 
         }
     }
@@ -144,6 +166,8 @@ public class AutoClick : MonoBehaviour
             scoreArgent.score1 -= PrixConstell4;
             MortEtoile4.SetActive(true);
             Obtention4 = 1;
+            Destroy(Constellation4);
+            Destroy(ByeText4);
         }
     }
     public void Constell5()
@@ -155,7 +179,8 @@ public class AutoClick : MonoBehaviour
             scoreArgent.score1 -= PrixConstell5;
             MortEtoile5.SetActive(true);
             Obtention5 = 1;
-
+            Destroy(Constellation5);
+            Destroy(ByeText5);
         }
     }
     public void Constell6()
@@ -167,6 +192,8 @@ public class AutoClick : MonoBehaviour
             scoreArgent.score1 -= PrixConstell6;
             MortEtoile6.SetActive(true);
             Obtention6 = 1;
+            Destroy(Constellation6);
+            Destroy(ByeText6);
 
         }
     }
