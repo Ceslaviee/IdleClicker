@@ -11,6 +11,8 @@ public class AutoClick : MonoBehaviour
     public int puissance;
     public int Prix;
     public int Prix1;
+    public int Prix2;
+    public int Prix3;
     public int PrixConstell0;
     public int PrixConstell1;
     public int PrixConstell2;
@@ -30,6 +32,8 @@ public class AutoClick : MonoBehaviour
     public int trou;
     public TextMeshProUGUI textPrix;
     public TextMeshProUGUI textPrix1;
+    public TextMeshProUGUI textPrix2;
+    public TextMeshProUGUI textPrix3;
     public TextMeshProUGUI textQuantite;
     public TextMeshProUGUI textQuantite1;
     public GameObject MonCanvas;
@@ -83,7 +87,7 @@ public class AutoClick : MonoBehaviour
     {
         if (scoreArgent.score >= Prix)
         {
-            clickPower += 2;
+            clickPower += 3;
             scoreArgent.score -= Prix;
             scoreArgent.score1 -= Prix;
             Prix = Prix + (Prix * 83/100);
@@ -96,25 +100,47 @@ public class AutoClick : MonoBehaviour
     {
         if (scoreArgent.score >= Prix1)
         {
-            clickPower += 20;
+            clickPower += 90;
             scoreArgent.score -= Prix1;
             scoreArgent.score1 -= Prix1;
             Prix1 = Prix1 + (Prix1 * 74 / 100);
             textPrix1.text = Prix1.ToString("00");
         }
     }
+    public void PremierUpgrade2()
+    {
+        if (scoreArgent.score >= Prix2)
+        {
+            clickPower += 360;
+            scoreArgent.score -= Prix2;
+            scoreArgent.score1 -= Prix2;
+            Prix2 = Prix2 + (Prix2 * 74 / 100);
+            textPrix2.text = Prix2.ToString("00");
+        }
+    }
+    public void PremierUpgrade3()
+    {
+        if (scoreArgent.score >= Prix3)
+        {
+            clickPower += 2090;
+            scoreArgent.score -= Prix3;
+            scoreArgent.score1 -= Prix3;
+            Prix3 = Prix3 + (Prix3 * 67 / 100);
+            textPrix3.text = Prix3.ToString("00");
+        }
+    }
     public void Constell0()
     {
         if (scoreArgent.score >= PrixConstell0 && Obtention0 == 0)
         {
-            clickPower += 1000;
+            clickPower += 1200;
             scoreArgent.score -= PrixConstell0;
             scoreArgent.score1 -= PrixConstell0;
             MortEtoile0.SetActive(true);
             Obtention0 = 1;
             Destroy(Constellation0);
             Destroy(ByeText0);
-
+            // #je pense que je peut enlever la condition obtention mais je veux pas tout casser# //
         }
     }
     public void Constell1()
