@@ -223,6 +223,11 @@ public class AutoClick : MonoBehaviour
 
         }
     }
+
+    public void Fin()
+    {
+        if (Obtention0 == 1 && Obtention1 == 1 && Obtention2 == 1 && Obtention3 == 1 && Obtention4 == 1 && Obtention5 == 1 && Obtention6 == 1) ;
+    }
     public void ChangementScene()
     {
         MonCanvas.SetActive(true);
