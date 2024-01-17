@@ -13,6 +13,7 @@ public class AutoClick : MonoBehaviour
     public int Prix1;
     public int Prix2;
     public int Prix3;
+    public int PrixFinal;
     public int PrixConstell0;
     public int PrixConstell1;
     public int PrixConstell2;
@@ -27,15 +28,13 @@ public class AutoClick : MonoBehaviour
     public int Obtention4;
     public int Obtention5;
     public int Obtention6;
-    public int etoile;
-    public int galaxie;
-    public int trou;
     public TextMeshProUGUI textPrix;
     public TextMeshProUGUI textPrix1;
     public TextMeshProUGUI textPrix2;
     public TextMeshProUGUI textPrix3;
     public TextMeshProUGUI textQuantite;
     public TextMeshProUGUI textQuantite1;
+    public GameObject Ofin;
     public GameObject MonCanvas;
     public GameObject MonAutreCanvas;
     public GameObject MortEtoile0;
@@ -59,6 +58,7 @@ public class AutoClick : MonoBehaviour
     public GameObject ByeText4;
     public GameObject ByeText5;
     public GameObject ByeText6;
+    public GameObject EcranFinal;
 
 
     // Start is called before the first frame update
@@ -74,6 +74,8 @@ public class AutoClick : MonoBehaviour
         MortEtoile4.SetActive(false);
         MortEtoile5.SetActive(false);
         MortEtoile6.SetActive(false);
+        EcranFinal.SetActive(false);
+        Ofin.SetActive(false);
 
     }
 
@@ -127,6 +129,15 @@ public class AutoClick : MonoBehaviour
             scoreArgent.score1 -= Prix3;
             Prix3 = Prix3 + (Prix3 * 67 / 100);
             textPrix3.text = Prix3.ToString("00");
+        }
+    }
+
+    public void Fin()
+    {
+        if (scoreArgent.score >= PrixFinal)
+        {
+            EcranFinal.SetActive(true);
+            Ofin.SetActive(true);
         }
     }
     public void Constell0()
@@ -224,10 +235,11 @@ public class AutoClick : MonoBehaviour
         }
     }
 
-    public void Fin()
+    public void ConstellationFin()
     {
         if (Obtention0 == 1 && Obtention1 == 1 && Obtention2 == 1 && Obtention3 == 1 && Obtention4 == 1 && Obtention5 == 1 && Obtention6 == 1) ;
     }
+    
     public void ChangementScene()
     {
         MonCanvas.SetActive(true);
