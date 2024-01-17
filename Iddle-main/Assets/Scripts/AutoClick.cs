@@ -92,7 +92,7 @@ public class AutoClick : MonoBehaviour
             clickPower += 3;
             scoreArgent.score -= Prix;
             scoreArgent.score1 -= Prix;
-            Prix = Prix + (Prix * 83/100);
+            Prix = Prix + (Prix * 63/100);
             textPrix.text = Prix.ToString("00");
             
         }
@@ -105,7 +105,7 @@ public class AutoClick : MonoBehaviour
             clickPower += 90;
             scoreArgent.score -= Prix1;
             scoreArgent.score1 -= Prix1;
-            Prix1 = Prix1 + (Prix1 * 74 / 100);
+            Prix1 = Prix1 + (Prix1 * 6 / 100);
             textPrix1.text = Prix1.ToString("00");
         }
     }
@@ -124,7 +124,7 @@ public class AutoClick : MonoBehaviour
     {
         if (scoreArgent.score >= Prix3)
         {
-            clickPower += 2090;
+            clickPower += 1090;
             scoreArgent.score -= Prix3;
             scoreArgent.score1 -= Prix3;
             Prix3 = Prix3 + (Prix3 * 67 / 100);
@@ -144,7 +144,7 @@ public class AutoClick : MonoBehaviour
     {
         if (scoreArgent.score >= PrixConstell0 && Obtention0 == 0)
         {
-            clickPower += 1200;
+            clickPower += 10;
             scoreArgent.score -= PrixConstell0;
             scoreArgent.score1 -= PrixConstell0;
             MortEtoile0.SetActive(true);
