@@ -5,6 +5,7 @@ using TMPro;
 
 public class AutoClick : MonoBehaviour
 { 
+    // Y en as qui ne servent pas, mais j'ai pas envie de tout casser (puissance, quantite)
     public ScoreManager gerescore;
     public ScoreManager scoreArgent;
     public int clickPower;
